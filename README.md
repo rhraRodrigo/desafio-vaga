@@ -28,6 +28,6 @@
   > 
   > docker compose up
 
-Pronto ! Agora você pode dar um Run da aplicação Java.
+Pronto ! Agora você pode dar um <b>Run</b> da aplicação Java.
 
 Abraços!
