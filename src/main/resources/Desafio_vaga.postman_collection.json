@@ -1,0 +1,476 @@
+{
+	"info": {
+		"_postman_id": "877a9ea9-cdda-48bf-9813-2f122f09c6d5",
+		"name": "Desafio_vaga",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12057947"
+	},
+	"item": [
+		{
+			"name": "Criar token jwt",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"admin@helpdesk.com\",\r\n    \"password\":\"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/auth",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "usuario - criar",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBoZWxwZGVzay5jb20iLCJjcmVhdGVkIjoxNzE5NTIwODkyODQ2LCJleHAiOjE3MjAxMjU2OTJ9.a-RDNq4ygC09D6UhrkJ1qqY9OiehKOvUQniJ_MWAU_woC2HBI7Om1XX7k-_UtTme2SFXsthL5Qbb2GxF8xx0lQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"admin@helpdesk.com\",\r\n    \"password\":\"123456\",\r\n    \"profile\":\"ROLE_CUSTOMER\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/user",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ticket - criar",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjdXN0b21lckBnbWFpbC5jb20iLCJjcmVhdGVkIjoxNzE5NTAyOTAyMDI1LCJleHAiOjE3MjAxMDc3MDJ9.nLfe8FEx7GvcMfBnS1atKSTCZtT0gFnchhYFSP29oMWFUcQ_WT0zUWXmoFV22mrwa8MM-3HdrMt4qIExxm_ZJg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\":\"Ticke 5\",\r\n    \"priority\":\"NORMAL\",\r\n    \"description\":\"descrição ticket 5\",\r\n    \"image\": \"byte test\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/ticket",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"ticket"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ticket - alterar",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjdXN0b21lckBnbWFpbC5jb20iLCJjcmVhdGVkIjoxNzE5NTAyOTAyMDI1LCJleHAiOjE3MjAxMDc3MDJ9.nLfe8FEx7GvcMfBnS1atKSTCZtT0gFnchhYFSP29oMWFUcQ_WT0zUWXmoFV22mrwa8MM-3HdrMt4qIExxm_ZJg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":\"667d8b94e17a1711de538371\",\r\n    \"title\":\"Ticke 1 change\",\r\n    \"priority\":\"NORMAL\",\r\n    \"description\":\"descrição ticket change\",\r\n    \"image\": \"byte test\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/ticket",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"ticket"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ticket - buscar por id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjdXN0b21lckBnbWFpbC5jb20iLCJjcmVhdGVkIjoxNzE5NTAyOTAyMDI1LCJleHAiOjE3MjAxMDc3MDJ9.nLfe8FEx7GvcMfBnS1atKSTCZtT0gFnchhYFSP29oMWFUcQ_WT0zUWXmoFV22mrwa8MM-3HdrMt4qIExxm_ZJg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/ticket/667d8b94e17a1711de538371",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"ticket",
+						"667d8b94e17a1711de538371"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ticket - buscar todos",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjdXN0b21lckBnbWFpbC5jb20iLCJjcmVhdGVkIjoxNzE5NTAyOTAyMDI1LCJleHAiOjE3MjAxMDc3MDJ9.nLfe8FEx7GvcMfBnS1atKSTCZtT0gFnchhYFSP29oMWFUcQ_WT0zUWXmoFV22mrwa8MM-3HdrMt4qIExxm_ZJg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/ticket/0/4",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"ticket",
+						"0",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ticket - deletar",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjdXN0b21lckBnbWFpbC5jb20iLCJjcmVhdGVkIjoxNzE5NTAyOTAyMDI1LCJleHAiOjE3MjAxMDc3MDJ9.nLfe8FEx7GvcMfBnS1atKSTCZtT0gFnchhYFSP29oMWFUcQ_WT0zUWXmoFV22mrwa8MM-3HdrMt4qIExxm_ZJg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/ticket/667d8b94e17a1711de538371",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"ticket",
+						"667d8b94e17a1711de538371"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "usuario - listar por id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBoZWxwZGVzay5jb20iLCJjcmVhdGVkIjoxNzE5NDU2ODU2MzUxLCJleHAiOjE3MjAwNjE2NTZ9.lugCZ-1-XS2xF5RWTcBX67DBEhGwUX4EHbo3Oz7NB-DfyGsXMCyk8iDEQTZq935bLsi1nllQts3WfSdz0oOzYg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"admin@helpdesk.com\",\r\n    \"password\":\"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/user/667cd4b8df478379408d14ab",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"user",
+						"667cd4b8df478379408d14ab"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "usuario - listar todos",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBoZWxwZGVzay5jb20iLCJjcmVhdGVkIjoxNzE5NDU2ODU2MzUxLCJleHAiOjE3MjAwNjE2NTZ9.lugCZ-1-XS2xF5RWTcBX67DBEhGwUX4EHbo3Oz7NB-DfyGsXMCyk8iDEQTZq935bLsi1nllQts3WfSdz0oOzYg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"admin@helpdesk.com\",\r\n    \"password\":\"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/user/0/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"user",
+						"0",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ticket - busca params",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjdXN0b21lckBnbWFpbC5jb20iLCJjcmVhdGVkIjoxNzE5NTAyOTAyMDI1LCJleHAiOjE3MjAxMDc3MDJ9.nLfe8FEx7GvcMfBnS1atKSTCZtT0gFnchhYFSP29oMWFUcQ_WT0zUWXmoFV22mrwa8MM-3HdrMt4qIExxm_ZJg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/ticket/0/4/0/Ticke/NEW/NORMAL",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"ticket",
+						"0",
+						"4",
+						"0",
+						"Ticke",
+						"NEW",
+						"NORMAL"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ticket - alterar status",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjdXN0b21lckBnbWFpbC5jb20iLCJjcmVhdGVkIjoxNzE5NTAyOTAyMDI1LCJleHAiOjE3MjAxMDc3MDJ9.nLfe8FEx7GvcMfBnS1atKSTCZtT0gFnchhYFSP29oMWFUcQ_WT0zUWXmoFV22mrwa8MM-3HdrMt4qIExxm_ZJg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/ticket/667d8d888338474c0503bcd1/RESOLVED",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"ticket",
+						"667d8d888338474c0503bcd1",
+						"RESOLVED"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ticket - resumo",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjdXN0b21lckBnbWFpbC5jb20iLCJjcmVhdGVkIjoxNzE5NTAyOTAyMDI1LCJleHAiOjE3MjAxMDc3MDJ9.nLfe8FEx7GvcMfBnS1atKSTCZtT0gFnchhYFSP29oMWFUcQ_WT0zUWXmoFV22mrwa8MM-3HdrMt4qIExxm_ZJg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/ticket/summary",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"ticket",
+						"summary"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
