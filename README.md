@@ -28,6 +28,11 @@
   > 
   > docker compose up
 
+### Postman Collection
+- Adicionei a collection na pasta:
+  
+  > /resources/Desafio_vaga.postman_collection.json 
+
 Pronto ! Agora você pode dar um <b>Run</b> da aplicação Java.
 
 Abraços!
