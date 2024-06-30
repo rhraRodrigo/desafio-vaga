@@ -1,8 +1,10 @@
 services:
-  mongodb:
-    image: mongo
+  mongo:
+    image: mongodb/atlas
+    privileged: true
+    command: |
+      /bin/bash -c "atlas deployments setup --type local --port 27017 --bindIpAll --username admin --password 123 --force && tail -f /dev/null"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
     ports:
       - 27017:27017
-    environment:
-      - MONGO_INITDB_ROOT_USERNAME=admin
-      - MONGO_INITDB_ROOT_PASSWORD=123
