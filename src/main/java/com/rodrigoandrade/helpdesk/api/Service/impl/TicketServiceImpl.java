@@ -1,7 +1,6 @@
 package com.rodrigoandrade.helpdesk.api.Service.impl;
 
 import com.rodrigoandrade.helpdesk.api.Service.TicketService;
-import com.rodrigoandrade.helpdesk.api.Service.UserService;
 import com.rodrigoandrade.helpdesk.api.dto.Summary;
 import com.rodrigoandrade.helpdesk.api.entity.ChangeStatus;
 import com.rodrigoandrade.helpdesk.api.entity.Ticket;
@@ -13,6 +12,7 @@ import com.rodrigoandrade.helpdesk.api.repository.TicketRepository;
 import com.rodrigoandrade.helpdesk.api.repository.UserRepository;
 import com.rodrigoandrade.helpdesk.api.response.Response;
 import com.rodrigoandrade.helpdesk.api.security.jwt.JwtTokenUtil;
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -21,7 +21,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
 
-import javax.servlet.http.HttpServletRequest;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -61,7 +60,7 @@ public class TicketServiceImpl implements TicketService {
     @Override
     public Response<Summary> findSummary() {
         Response<Summary> response = new Response<>();
-        Summary summary = new Summary();
+
 
         int amountNew =0;
         int amountResolved=0;
@@ -101,12 +100,12 @@ public class TicketServiceImpl implements TicketService {
             }
         }
 
-        summary.setAmountNew(amountNew);
-        summary.setAmountResolved(amountResolved);
-        summary.setAmountApproved(amountApproved);
-        summary.setAmountDisaproved(amountDisaproved);
-        summary.setAmountAssigned(amountAssigned);
-        summary.setAmountClosed(amountClosed);
+        Summary summary = new Summary(amountNew
+                , amountResolved
+                , amountApproved
+                , amountDisaproved
+                , amountAssigned
+                ,amountClosed);
 
         response.setData(summary);
 

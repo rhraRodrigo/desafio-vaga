@@ -4,6 +4,8 @@ import com.mongodb.DuplicateKeyException;
 import com.rodrigoandrade.helpdesk.api.Service.UserService;
 import com.rodrigoandrade.helpdesk.api.entity.User;
 import com.rodrigoandrade.helpdesk.api.response.Response;
+import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
@@ -13,9 +15,9 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
+@Tag(name="Users", description = "Maintenance Users")
 @RestController
 @RequestMapping("/api/user")
 @CrossOrigin(origins = "*")

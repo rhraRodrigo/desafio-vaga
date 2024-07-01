@@ -1,17 +1,12 @@
 package com.rodrigoandrade.helpdesk.api.Service;
 
 import com.rodrigoandrade.helpdesk.api.dto.Summary;
-import com.rodrigoandrade.helpdesk.api.entity.ChangeStatus;
 import com.rodrigoandrade.helpdesk.api.entity.Ticket;
 import com.rodrigoandrade.helpdesk.api.response.Response;
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-
-import javax.servlet.http.HttpServletRequest;
 
 @Component
 public interface TicketService {
