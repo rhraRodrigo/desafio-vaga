@@ -6,8 +6,6 @@
   <img alt="Language: Java" src="https://img.shields.io/badge/language-java-green">
 </p>
 
-# Oi, me chamo [Rodrigo Andrade] 👋
-
 ## Como interagir com o banco de dados?
 - Utilizei o [MongoDB Compass](https://www.mongodb.com/products/tools/compass)
 
@@ -16,11 +14,12 @@
 
 ### :rocket: Tecnologias abordadas:
 
-- Java (11)
-- Spring boot (2)
-- Spring security
+- Java (21)
+- Spring boot (3)
+- Spring security (6)
 - Spring Data MongoDB
 - Docker
+- GraalVM-21
 
 ### Dicas para rodar o projeto:
 - Após abrir o projeto, no terminal da sua IDE, executar o seguinte comando para subir um container com o MongoDB:
